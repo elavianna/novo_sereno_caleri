@@ -1,0 +1,2089 @@
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-07 12:21:17 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 134ms (Views: 70.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (5.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (4.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateItems (20160507152329)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateItems (20160507152329)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "image_file_name" varchar, "image_content_type" varchar, "image_file_size" integer, "image_updated_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160507152329"]]
+  [1m[36m (21.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCategories (20160507153350)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160507153350"]]
+  [1m[36m (69.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/items" for 127.0.0.1 at 2016-05-07 12:35:17 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 6547ms (Views: 6435.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-05-07 12:35:27 -0300
+
+
+Started GET "/items/new" for 127.0.0.1 at 2016-05-07 12:35:35 -0300
+Processing by ItemsController#new as HTML
+  Rendered items/_form.html.erb (341.6ms)
+  Rendered items/new.html.erb within layouts/application (399.8ms)
+Completed 500 Internal Server Error in 427ms
+
+ActionView::Template::Error (undefined method `image' for #<Item:0x007fbd20f50110>):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= f.label :image %><br>
+    20:     <%= f.text_field :image %>
+    21:   </div>
+    22:   <div class="actions">
+    23:     <%= f.submit %>
+  app/views/items/_form.html.erb:20:in `block in _app_views_items__form_html_erb__706172877090443784_70225131097800'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb__706172877090443784_70225131097800'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb___2736579621433296969_70225137588460'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.1ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (101.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (154.2ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (223.7ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2016-05-07 12:35:37 -0300
+Processing by ItemsController#new as HTML
+  Rendered items/_form.html.erb (6.4ms)
+  Rendered items/new.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 42ms
+
+ActionView::Template::Error (undefined method `image' for #<Item:0x007fbcfac3a280>):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= f.label :image %><br>
+    20:     <%= f.text_field :image %>
+    21:   </div>
+    22:   <div class="actions">
+    23:     <%= f.submit %>
+  app/views/items/_form.html.erb:20:in `block in _app_views_items__form_html_erb__706172877090443784_70224818857040'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb__706172877090443784_70224818857040'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb___2736579621433296969_70224818848960'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (39.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (152.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (65.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (143.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPaperclipToItem (20160507153829)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (14.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160507153829"]]
+  [1m[35m (30.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/items/new" for 127.0.0.1 at 2016-05-07 12:46:19 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#new as HTML
+  Rendered items/_form.html.erb (157.7ms)
+  Rendered items/new.html.erb within layouts/application (172.2ms)
+Completed 200 OK in 1885ms (Views: 1734.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2016-05-07 12:48:59 -0300
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T//jww3q3YnRZQVDj7GJCwftL4bJzMIkBWNbJo61RgfjJGN5DSW+QYhEA9BG2ki2TRMYx5OIFvU1R51YJqw9cQ==", "item"=>{"title"=>"Teste", "image"=>"/home/osboxes/Pictures/Screenshot from 2016-04-01 23:08:15.png"}, "commit"=>"Create Item"}
+Completed 500 Internal Server Error in 21ms
+
+Paperclip::AdapterRegistry::NoHandlerError (No handler found for "/home/osboxes/Pictures/Screenshot from 2016-04-01 23:08:15.png"):
+  app/controllers/items_controller.rb:27:in `create'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (140.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (100.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (193.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-05-07 12:49:38 -0300
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (3.7ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 110ms (Views: 103.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-05-07 13:24:18 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 1715ms (Views: 1603.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2016-05-07 13:24:24 -0300
+Processing by ItemsController#new as HTML
+  Rendered items/_form.html.erb (167.8ms)
+  Rendered items/new.html.erb within layouts/application (185.7ms)
+Completed 200 OK in 316ms (Views: 302.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2016-05-07 13:24:36 -0300
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9J/MiC6IBae9ISsxKOAakOkLqqecRY4xrsWooL2XR6NYREwyLkdmb+QALaLhi9sto/Wd5sYBWuCe4W7eFY481Q==", "item"=>{"title"=>"Teste", "image"=>"/images/original/missing.png"}, "commit"=>"Create Item"}
+Completed 500 Internal Server Error in 6ms
+
+Paperclip::AdapterRegistry::NoHandlerError (No handler found for "/images/original/missing.png"):
+  app/controllers/items_controller.rb:27:in `create'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (130.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (78.1ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (229.9ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2016-05-07 13:26:08 -0300
+Processing by ItemsController#new as HTML
+  Rendered items/_form.html.erb (30.6ms)
+  Rendered items/new.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 102ms (Views: 100.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categorys" for 127.0.0.1 at 2016-05-07 13:33:12 -0300
+
+ActionController::RoutingError (No route matches [GET] "/categorys"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (109.1ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (263.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (86.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (180.9ms)
+
+
+Started GET "/category" for 127.0.0.1 at 2016-05-07 13:33:26 -0300
+
+ActionController::RoutingError (No route matches [GET] "/category"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (19.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (49.4ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (130.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (77.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (194.3ms)
+
+
+Started GET "/category" for 127.0.0.1 at 2016-05-07 13:33:35 -0300
+
+ActionController::RoutingError (No route matches [GET] "/category"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (135.1ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (6.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (99.4ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (229.4ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-05-07 13:33:49 -0300
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (8.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 396ms (Views: 204.1ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2016-05-07 13:33:52 -0300
+Processing by CategoriesController#new as HTML
+  Rendered categories/_form.html.erb (4.5ms)
+  Rendered categories/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 97ms (Views: 88.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2016-05-07 13:34:02 -0300
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/j26kE5EKaKEvLbO7yDRC8A+JXFi5krHooUCTu9NbTBS5joqTotKat2dsF0mSxC2isASMDiinhaSocQwR1QWRg==", "category"=>{"name"=>"Bicicletas"}, "commit"=>"Create Category"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (76.1ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bicicletas"], ["created_at", "2016-05-07 16:34:02.031261"], ["updated_at", "2016-05-07 16:34:02.031261"]]
+  [1m[35m (17.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/categories/1
+Completed 302 Found in 230ms (ActiveRecord: 94.0ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2016-05-07 13:34:02 -0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 217ms (Views: 92.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2016-05-08 09:47:05 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#new as HTML
+  Rendered items/_form.html.erb (186.4ms)
+  Rendered items/new.html.erb within layouts/application (209.1ms)
+Completed 200 OK in 1868ms (Views: 1738.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-05-08 09:56:05 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered categories/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 1598ms (Views: 1476.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-05-08 09:56:07 -0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-05-08 09:56:07 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-08 09:56:07 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-05-08 09:56:07 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-05-08 09:56:07 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-08 09:56:07 -0300
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-05-08 09:56:07 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-05-08 09:56:07 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-05-08 09:56:07 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-05-08 09:56:08 -0300
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2016-05-08 09:56:55 -0300
+Processing by CategoriesController#new as HTML
+  Rendered categories/_form.html.erb (69.7ms)
+  Rendered categories/new.html.erb within layouts/application (90.2ms)
+Completed 200 OK in 213ms (Views: 212.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2016-05-08 09:57:02 -0300
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cdrvJEHldiyb6g9+d2tQFTmSOXqYBrshDpugfQqx1vYkXc2SqrCySWpPQjhLzSaF/LK/XrKborCKIqXfzNExYA==", "category"=>{"name"=>"Teranga"}, "commit"=>"Create Category"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Teranga"], ["created_at", "2016-05-08 12:57:02.695805"], ["updated_at", "2016-05-08 12:57:02.695805"]]
+  [1m[36m (42.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/categories/2
+Completed 302 Found in 109ms (ActiveRecord: 44.3ms)
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2016-05-08 09:57:02 -0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCategory Load (0.7ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered categories/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 162ms (Views: 82.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-05-08 09:57:06 -0300
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (390.3ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (140.7ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateItems (20160507152329)
+  [1m[35m (147.0ms)[0m  CREATE TABLE `items` (`id` int(11) auto_increment PRIMARY KEY, `title` varchar(255), `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int(11), `image_updated_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (36.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160507152329')
+  [1m[36m (29.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCategories (20160507153350)
+  [1m[35m (133.5ms)[0m  CREATE TABLE `categories` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160507153350')
+  [1m[36m (3.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddPaperclipToItem (20160507153829)
+  [1m[35m (2.0ms)[0m  ALTER TABLE `items` ADD `image_file_name` varchar(255)
+Mysql2::Error: Duplicate column name 'image_file_name': ALTER TABLE `items` ADD `image_file_name` varchar(255)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-19 11:35:18 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (4.4ms)
+Completed 200 OK in 140ms (Views: 50.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-19 11:35:25 -0300
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (39.3ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (140.3ms)
+Completed 200 OK in 1840ms (Views: 1721.6ms | ActiveRecord: 85.7ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-06-19 11:36:00 -0300
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+  Rendered categories/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 213ms (Views: 145.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-19 11:36:06 -0300
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (12.8ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 194ms (Views: 179.1ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 18:52:44 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (68.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (138.0ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (221.4ms)
+Completed 200 OK in 1789ms (Views: 1513.5ms | ActiveRecord: 171.3ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 18:52:48 -0300
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (24.7ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 111ms (Views: 85.7ms | ActiveRecord: 24.7ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 18:53:55 -0300
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (168.2ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (173.4ms)
+Completed 200 OK in 422ms (Views: 238.8ms | ActiveRecord: 168.2ms)
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 18:53:56 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 18:53:56 -0300
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 18:53:56 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 18:53:56 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 18:53:56 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 18:53:56 -0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 18:53:56 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 18:53:56 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 18:53:56 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 18:53:56 -0300
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 18:57:10 -0300
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (116.2ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.html.erb within layouts/application (238.7ms)
+Completed 200 OK in 512ms (Views: 324.8ms | ActiveRecord: 163.7ms)
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 18:57:11 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 18:57:11 -0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 18:57:11 -0300
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 18:57:11 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:11 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:11 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:11 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:11 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:11 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:11 -0300
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 18:57:17 -0300
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (14.8ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 110ms (Views: 94.6ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 18:57:17 -0300
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 18:57:17 -0300
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 18:57:17 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 18:57:17 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:17 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:17 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:17 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:17 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:17 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:17 -0300
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 18:57:39 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (5.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (11.4ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (96.5ms)
+Completed 200 OK in 1495ms (Views: 1377.8ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 18:57:41 -0300
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 18:57:41 -0300
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 18:57:41 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 18:57:41 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:41 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:41 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:41 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:41 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:41 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 18:57:41 -0300
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 19:01:15 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.8ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (93.4ms)
+Completed 200 OK in 1536ms (Views: 1445.3ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:01:17 -0300
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:01:17 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 19:01:17 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:01:17 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:01:17 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 19:01:17 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 19:01:17 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 19:01:17 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 19:01:17 -0300
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 19:01:18 -0300
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 19:04:53 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (13.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (33.4ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (108.6ms)
+Completed 200 OK in 1409ms (Views: 1294.8ms | ActiveRecord: 35.4ms)
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:04:55 -0300
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 19:04:55 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 19:04:55 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 19:04:55 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 19:04:55 -0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:04:55 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 19:04:55 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:04:55 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 19:04:55 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:04:55 -0300
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 19:04:59 -0300
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (12.9ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 204ms (Views: 189.4ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:04:59 -0300
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 19:04:59 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 19:04:59 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 19:04:59 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 19:04:59 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 19:04:59 -0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:04:59 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:04:59 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 19:04:59 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:04:59 -0300
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 19:05:02 -0300
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (2.3ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 98ms (Views: 95.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:05:02 -0300
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:05:02 -0300
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 19:05:02 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 19:05:02 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 19:05:02 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:05:02 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 19:05:02 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:05:02 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 19:05:02 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 19:05:02 -0300
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 19:12:33 -0300
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (103.2ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.html.erb within layouts/application (107.2ms)
+Completed 200 OK in 309ms (Views: 203.3ms | ActiveRecord: 103.2ms)
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:12:34 -0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:12:34 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 19:12:34 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 19:12:34 -0300
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 19:12:34 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 19:12:34 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 19:12:34 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 19:12:34 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:12:34 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:12:34 -0300
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 19:12:37 -0300
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (5.9ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 78ms (Views: 71.3ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:12:37 -0300
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:12:37 -0300
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 19:12:37 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 19:12:37 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 19:12:37 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 19:12:38 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:12:38 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 19:12:38 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:12:38 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 19:12:38 -0300
+
+
+Started GET "/items/new" for 127.0.0.1 at 2016-06-20 19:12:40 -0300
+Processing by ItemsController#new as HTML
+  [1m[36mCategory Load (42.7ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+  Rendered items/_form.html.erb (228.8ms)
+  Rendered items/new.html.erb within layouts/application (284.9ms)
+Completed 200 OK in 323ms (Views: 236.9ms | ActiveRecord: 85.1ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 19:12:48 -0300
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (1.4ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 61ms (Views: 58.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 19:13:13 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (1.4ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (99.7ms)
+Completed 200 OK in 1507ms (Views: 1367.2ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:13:15 -0300
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:13:15 -0300
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 19:13:15 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 19:13:15 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 19:13:15 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 19:13:15 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:13:15 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:13:15 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 19:13:15 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 19:13:15 -0300
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 19:16:36 -0300
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (19.3ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.html.erb within layouts/application (186.3ms)
+Completed 200 OK in 472ms (Views: 414.3ms | ActiveRecord: 33.5ms)
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:16:37 -0300
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 19:16:37 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 19:16:37 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 19:16:37 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 19:16:37 -0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:16:37 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:16:37 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:16:37 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 19:16:37 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 19:16:37 -0300
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 19:16:41 -0300
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (14.7ms)[0m  SELECT `items`.* FROM `items`
+  Rendered items/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 105ms (Views: 89.4ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:16:42 -0300
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:16:42 -0300
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 19:16:42 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 19:16:42 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 19:16:42 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 19:16:42 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:16:42 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:16:42 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 19:16:42 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 19:16:42 -0300
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 19:22:43 -0300
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (2.2ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  Rendered items/index.html.erb within layouts/application (59.3ms)
+Completed 200 OK in 233ms (Views: 195.4ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:22:44 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 19:22:44 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 19:22:44 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:22:44 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:22:44 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 19:22:44 -0300
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 19:22:44 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 19:22:44 -0300
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:22:44 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 19:22:44 -0300
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-06-20 19:37:15 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.6ms)[0m  SELECT `categories`.* FROM `categories`
+  Rendered categories/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 1448ms (Views: 1344.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 19:53:08 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (8.0ms)[0m  SELECT `items`.* FROM `items`
+  [1m[36mCategory Load (79.2ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (38.2ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 3 LIMIT 1[0m
+  Rendered items/index.html.erb within layouts/application (306.9ms)
+Completed 200 OK in 1688ms (Views: 1463.4ms | ActiveRecord: 141.4ms)
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 19:53:10 -0300
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:53:10 -0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:53:10 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 19:53:10 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:53:10 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 19:53:10 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:53:10 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 19:53:10 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 19:53:10 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 19:53:10 -0300
+
+
+Started GET "/system/items/images/000/000/002/small/download.jpg?1465142644" for 127.0.0.1 at 2016-06-20 19:53:10 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/items/images/000/000/002/small/download.jpg"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.1ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (59.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (361.2ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.3ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (192.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (279.0ms)
+
+
+Started GET "/system/items/images/000/000/003/small/Screenshot_from_2016-06-04_20-25-32.png?1465155724" for 127.0.0.1 at 2016-06-20 19:53:11 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/items/images/000/000/003/small/Screenshot_from_2016-06-04_20-25-32.png"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (21.2ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (31.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (22.2ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (159.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (92.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (148.2ms)
+
+
+Started GET "/system/items/images/000/000/004/small/Screenshot_from_2016-04-07_20-05-07.png?1465948804" for 127.0.0.1 at 2016-06-20 19:53:12 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/items/images/000/000/004/small/Screenshot_from_2016-04-07_20-05-07.png"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (32.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.1ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (143.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (74.4ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (156.6ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 19:53:25 -0300
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (21.0ms)[0m  SELECT `items`.* FROM `items`
+  [1m[36mCategory Load (6.1ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (20.4ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 3 LIMIT 1[0m
+  Rendered items/index.html.erb within layouts/application (57.1ms)
+Completed 200 OK in 114ms (Views: 65.7ms | ActiveRecord: 47.5ms)
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:53:26 -0300
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 19:53:26 -0300
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 19:53:26 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 19:53:26 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 19:53:26 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 19:53:26 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 19:53:26 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:53:26 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 19:53:26 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 19:53:26 -0300
+
+
+Started GET "/system/items/images/000/000/002/small/download.jpg?1465142644" for 127.0.0.1 at 2016-06-20 19:53:26 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/items/images/000/000/002/small/download.jpg"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (172.4ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (71.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (200.9ms)
+
+
+Started GET "/system/items/images/000/000/003/small/Screenshot_from_2016-06-04_20-25-32.png?1465155724" for 127.0.0.1 at 2016-06-20 19:53:26 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/items/images/000/000/003/small/Screenshot_from_2016-06-04_20-25-32.png"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (130.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (13.1ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (82.3ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (168.9ms)
+
+
+Started GET "/system/items/images/000/000/004/small/Screenshot_from_2016-04-07_20-05-07.png?1465948804" for 127.0.0.1 at 2016-06-20 19:53:27 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/items/images/000/000/004/small/Screenshot_from_2016-04-07_20-05-07.png"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (35.3ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (40.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (164.2ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (79.2ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (121.1ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2016-06-20 20:04:06 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (7.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ItemsController#new as HTML
+  [1m[35mCategory Load (0.6ms)[0m  SELECT `categories`.* FROM `categories`
+  Rendered items/_form.html.erb (69.3ms)
+  Rendered items/new.html.erb within layouts/application (76.7ms)
+Completed 200 OK in 643ms (Views: 547.2ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2016-06-20 20:04:42 -0300
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bjAbcNER/V5SSn1xQp8TLjM5wIAzk6AhCn5udJxZjlkxMZu4S61u6kn8nUzE+WoHgODSGax9H/pDvnb2sKZDzA==", "item"=>{"title"=>"qq", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff531270ed8 @tempfile=#<Tempfile:/tmp/RackMultipart20160620-7254-bkvm7b.jpg>, @original_filename="download.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[image]\"; filename=\"download.jpg\"\r\nContent-Type: image/jpeg\r\n">, "category_id"=>"1"}, "commit"=>"Create Item"}
+Command :: PATH=/usr/bin:$PATH; file -b --mime '/tmp/fd456406745d816a45cae554c788e75420160620-7254-e541nl.jpg'
+Command :: PATH=/usr/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/fd456406745d816a45cae554c788e75420160620-7254-u096n1.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin:$PATH; identify -format %m '/tmp/fd456406745d816a45cae554c788e75420160620-7254-u096n1.jpg[0]'
+Command :: PATH=/usr/bin:$PATH; convert '/tmp/fd456406745d816a45cae554c788e75420160620-7254-u096n1.jpg[0]' -auto-orient -resize "x64" -crop "64x64+24+0" +repage '/tmp/27f48f812c2ea5591a863a20e979850020160620-7254-tjbzvb'
+Command :: PATH=/usr/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/fd456406745d816a45cae554c788e75420160620-7254-u096n1.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin:$PATH; identify -format %m '/tmp/fd456406745d816a45cae554c788e75420160620-7254-u096n1.jpg[0]'
+Command :: PATH=/usr/bin:$PATH; convert '/tmp/fd456406745d816a45cae554c788e75420160620-7254-u096n1.jpg[0]' -auto-orient -resize "100x100>" '/tmp/27f48f812c2ea5591a863a20e979850020160620-7254-75b8e0'
+Command :: PATH=/usr/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/fd456406745d816a45cae554c788e75420160620-7254-u096n1.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin:$PATH; identify -format %m '/tmp/fd456406745d816a45cae554c788e75420160620-7254-u096n1.jpg[0]'
+Command :: PATH=/usr/bin:$PATH; convert '/tmp/fd456406745d816a45cae554c788e75420160620-7254-u096n1.jpg[0]' -auto-orient -resize "200x200>" '/tmp/27f48f812c2ea5591a863a20e979850020160620-7254-1x8zpyt'
+  [1m[36m (90.8ms)[0m  [1mBEGIN[0m
+Command :: PATH=/usr/bin:$PATH; file -b --mime '/tmp/fd456406745d816a45cae554c788e75420160620-7254-14myld4.jpg'
+  [1m[35mSQL (164.7ms)[0m  INSERT INTO `items` (`title`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `category_id`, `created_at`, `updated_at`) VALUES ('qq', 'download.jpg', 'image/jpeg', 7018, '2016-06-20 23:04:42.862562', 1, '2016-06-20 23:04:44.420822', '2016-06-20 23:04:44.420822')
+  [1m[36m (28.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items/5
+Completed 302 Found in 2039ms (ActiveRecord: 283.7ms)
+
+
+Started GET "/items/5" for 127.0.0.1 at 2016-06-20 20:04:45 -0300
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mItem Load (39.1ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 5 LIMIT 1
+  Rendered items/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 370ms (Views: 227.1ms | ActiveRecord: 39.1ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 20:04:49 -0300
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (34.6ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  [1m[35mCategory Load (0.6ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (12.6ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (161.3ms)
+Completed 200 OK in 299ms (Views: 249.1ms | ActiveRecord: 48.0ms)
+
+
+Started GET "/system/items/images/000/000/002/small/download.jpg?1465142644" for 127.0.0.1 at 2016-06-20 20:04:49 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/items/images/000/000/002/small/download.jpg"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (24.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (154.4ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (90.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (177.0ms)
+
+
+Started GET "/system/items/images/000/000/004/small/Screenshot_from_2016-04-07_20-05-07.png?1465948804" for 127.0.0.1 at 2016-06-20 20:04:50 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/items/images/000/000/004/small/Screenshot_from_2016-04-07_20-05-07.png"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (103.1ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (83.1ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (151.9ms)
+
+
+Started GET "/system/items/images/000/000/003/small/Screenshot_from_2016-06-04_20-25-32.png?1465155724" for 127.0.0.1 at 2016-06-20 20:04:50 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/items/images/000/000/003/small/Screenshot_from_2016-06-04_20-25-32.png"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (30.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (178.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (68.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (133.0ms)
+
+
+Started DELETE "/items/4" for 127.0.0.1 at 2016-06-20 20:05:00 -0300
+Processing by ItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dqvb5Q4X3i2NlonaVe3jPyWXFPUNRqZhSr7sOY+7WUMpqlstlKtNmZYgaefTi5oWlk4GbJKoGboDfvS7o0SU1g==", "id"=>"4"}
+  [1m[35mItem Load (13.6ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 4 LIMIT 1
+  [1m[36m (8.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (116.0ms)[0m  DELETE FROM `items` WHERE `items`.`id` = 4
+  [1m[36m (83.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 235ms (ActiveRecord: 221.4ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 20:05:00 -0300
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.8ms)[0m  SELECT `items`.* FROM `items`
+  [1m[36mCategory Load (0.9ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 80ms (Views: 76.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/system/items/images/000/000/002/small/download.jpg?1465142644" for 127.0.0.1 at 2016-06-20 20:05:01 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/items/images/000/000/002/small/download.jpg"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.4ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (248.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (54.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (135.0ms)
+
+
+Started GET "/system/items/images/000/000/003/small/Screenshot_from_2016-06-04_20-25-32.png?1465155724" for 127.0.0.1 at 2016-06-20 20:05:01 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/items/images/000/000/003/small/Screenshot_from_2016-06-04_20-25-32.png"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (121.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (69.1ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (155.0ms)
+
+
+Started DELETE "/items/3" for 127.0.0.1 at 2016-06-20 20:05:06 -0300
+Processing by ItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bjeerIhmdU+HTTUXtkh5inET/zI+xCC0H2Ekdf5Mq30xNh5kEtrm+5z71SowLgCjwsrtq6Eqn29WoTz30rNm6A==", "id"=>"3"}
+  [1m[35mItem Load (12.4ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 3 LIMIT 1
+  [1m[36m (1.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (30.3ms)[0m  DELETE FROM `items` WHERE `items`.`id` = 3
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 54ms (ActiveRecord: 46.3ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 20:05:06 -0300
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (12.9ms)[0m  SELECT `items`.* FROM `items`
+  [1m[36mCategory Load (11.4ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 101ms (Views: 75.6ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/system/items/images/000/000/002/small/download.jpg?1465142644" for 127.0.0.1 at 2016-06-20 20:05:07 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/items/images/000/000/002/small/download.jpg"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (46.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (202.1ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (95.0ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/osboxes/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (276.0ms)
+
+
+Started DELETE "/items/2" for 127.0.0.1 at 2016-06-20 20:05:11 -0300
+Processing by ItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uS4lOKH6CdJNG3sRmpB28y5J3QtrR9j9wuYnKggG2WDmL6XwO0aaZlatmywc9g/anZDPkvSpZyaLJj+oJPkU9Q==", "id"=>"2"}
+  [1m[36mItem Load (7.7ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 2 LIMIT 1[0m
+  [1m[35m (3.1ms)[0m  BEGIN
+  [1m[36mSQL (23.8ms)[0m  [1mDELETE FROM `items` WHERE `items`.`id` = 2[0m
+  [1m[35m (4.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/items
+Completed 302 Found in 48ms (ActiveRecord: 38.9ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 20:05:11 -0300
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (11.9ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  [1m[35mCategory Load (9.9ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1
+  Rendered items/index.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 97ms (Views: 73.9ms | ActiveRecord: 21.8ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2016-06-20 20:05:14 -0300
+Processing by ItemsController#new as HTML
+  [1m[36mCategory Load (31.2ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+  Rendered items/_form.html.erb (37.3ms)
+  Rendered items/new.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 98ms (Views: 66.1ms | ActiveRecord: 31.2ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2016-06-20 20:05:29 -0300
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qYkfAuTcxFGx6VaoR7yE14bKfYNrqueZbqy2hc5Nmuz2iJ/KfmBX5apftpXB2v3+NRNvGvREWEInbK4H4rJXeQ==", "item"=>{"title"=>"muiraquita", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff548874a70 @tempfile=#<Tempfile:/tmp/RackMultipart20160620-7254-1qacfcf>, @original_filename="index", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"item[image]\"; filename=\"index\"\r\nContent-Type: application/octet-stream\r\n">, "category_id"=>"1"}, "commit"=>"Create Item"}
+  [1m[35m (13.1ms)[0m  BEGIN
+  [1m[36m (2.9ms)[0m  [1mROLLBACK[0m
+  [1m[35mCategory Load (10.5ms)[0m  SELECT `categories`.* FROM `categories`
+  Rendered items/_form.html.erb (39.1ms)
+  Rendered items/new.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 184ms (Views: 137.8ms | ActiveRecord: 26.4ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2016-06-20 20:05:43 -0300
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iJ3WfjmcsRKt/DKXdteObD3N9gdCGweicTgm4zKrNB7XnFa2oyAiprZK0qrwsfdFjhTknt31uHk4+D5hHlT5iw==", "item"=>{"title"=>"muiraquita", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff53292b330 @tempfile=#<Tempfile:/tmp/RackMultipart20160620-7254-w3mijh.png>, @original_filename="Screenshot from 2016-04-04 20-46-50.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"item[image]\"; filename=\"Screenshot from 2016-04-04 20-46-50.png\"\r\nContent-Type: image/png\r\n">, "category_id"=>"1"}, "commit"=>"Create Item"}
+Command :: PATH=/usr/bin:$PATH; file -b --mime '/tmp/e3d4e444eb36fb140574ab1d3171287b20160620-7254-13khiel.png'
+Command :: PATH=/usr/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/8406a6cb824dd13e170f91b6a9cdd1a320160620-7254-1kbtd74.png[0]' 2>/dev/null
+Command :: PATH=/usr/bin:$PATH; identify -format %m '/tmp/8406a6cb824dd13e170f91b6a9cdd1a320160620-7254-1kbtd74.png[0]'
+Command :: PATH=/usr/bin:$PATH; convert '/tmp/8406a6cb824dd13e170f91b6a9cdd1a320160620-7254-1kbtd74.png[0]' -auto-orient -resize "x64" -crop "64x64+10+0" +repage '/tmp/2b77a08c6e7ce7793eb0308b32d70f7d20160620-7254-1j4k6on'
+Command :: PATH=/usr/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/8406a6cb824dd13e170f91b6a9cdd1a320160620-7254-1kbtd74.png[0]' 2>/dev/null
+Command :: PATH=/usr/bin:$PATH; identify -format %m '/tmp/8406a6cb824dd13e170f91b6a9cdd1a320160620-7254-1kbtd74.png[0]'
+Command :: PATH=/usr/bin:$PATH; convert '/tmp/8406a6cb824dd13e170f91b6a9cdd1a320160620-7254-1kbtd74.png[0]' -auto-orient -resize "100x100>" '/tmp/2b77a08c6e7ce7793eb0308b32d70f7d20160620-7254-1uz98y9'
+Command :: PATH=/usr/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/8406a6cb824dd13e170f91b6a9cdd1a320160620-7254-1kbtd74.png[0]' 2>/dev/null
+Command :: PATH=/usr/bin:$PATH; identify -format %m '/tmp/8406a6cb824dd13e170f91b6a9cdd1a320160620-7254-1kbtd74.png[0]'
+Command :: PATH=/usr/bin:$PATH; convert '/tmp/8406a6cb824dd13e170f91b6a9cdd1a320160620-7254-1kbtd74.png[0]' -auto-orient -resize "200x200>" '/tmp/2b77a08c6e7ce7793eb0308b32d70f7d20160620-7254-wggudy'
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+Command :: PATH=/usr/bin:$PATH; file -b --mime '/tmp/e3d4e444eb36fb140574ab1d3171287b20160620-7254-1pyvxjq.png'
+  [1m[35mSQL (159.2ms)[0m  INSERT INTO `items` (`title`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `category_id`, `created_at`, `updated_at`) VALUES ('muiraquita', 'Screenshot_from_2016-04-04_20-46-50.png', 'image/png', 82214, '2016-06-20 23:05:43.434115', 1, '2016-06-20 23:05:45.433499', '2016-06-20 23:05:45.433499')
+  [1m[36m (21.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items/6
+Completed 302 Found in 2323ms (ActiveRecord: 181.5ms)
+
+
+Started GET "/items/6" for 127.0.0.1 at 2016-06-20 20:05:45 -0300
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mItem Load (2.3ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 6 LIMIT 1
+  Rendered items/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 71ms (Views: 67.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 20:05:48 -0300
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.7ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  [1m[35mCategory Load (0.6ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 80ms (Views: 77.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2016-06-20 20:06:14 -0300
+Processing by ItemsController#new as HTML
+  [1m[35mCategory Load (1.5ms)[0m  SELECT `categories`.* FROM `categories`
+  Rendered items/_form.html.erb (6.4ms)
+  Rendered items/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 78ms (Views: 75.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 20:06:43 -0300
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (1.0ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  [1m[35mCategory Load (24.5ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 87ms (Views: 60.4ms | ActiveRecord: 25.6ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 20:24:18 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (72.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (1.0ms)[0m  SELECT `items`.* FROM `items`
+  [1m[36mCategory Load (44.9ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (234.0ms)
+Completed 200 OK in 1735ms (Views: 1585.4ms | ActiveRecord: 61.5ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-06-20 20:24:35 -0300
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (12.7ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+  Rendered categories/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 154ms (Views: 106.5ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2016-06-20 20:24:42 -0300
+Processing by CategoriesController#new as HTML
+  Rendered categories/_form.html.erb (126.1ms)
+  Rendered categories/new.html.erb within layouts/application (182.0ms)
+Completed 200 OK in 346ms (Views: 344.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 20:25:04 -0300
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (33.6ms)[0m  SELECT `items`.* FROM `items`
+  [1m[36mCategory Load (14.6ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (59.3ms)
+Completed 200 OK in 210ms (Views: 160.2ms | ActiveRecord: 48.2ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2016-06-20 20:25:09 -0300
+Processing by ItemsController#new as HTML
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+  Rendered items/_form.html.erb (53.5ms)
+  Rendered items/new.html.erb within layouts/application (56.3ms)
+Completed 200 OK in 112ms (Views: 109.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2016-06-20 20:25:38 -0300
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F74cshIeIAMbA60t73mn94toD+rqUcro+eRLbC9DvPVIv5x6iKKztwC1TRBpH97eOLEdc3W/dTOwJFPuA7xxYA==", "item"=>{"title"=>"photo", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f915df6c2c8 @tempfile=#<Tempfile:/tmp/RackMultipart20160620-8139-93sqcr.png>, @original_filename="Screenshot from 2016-04-07 19-47-46.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"item[image]\"; filename=\"Screenshot from 2016-04-07 19-47-46.png\"\r\nContent-Type: image/png\r\n">, "category_id"=>"2"}, "commit"=>"Create Item"}
+Command :: PATH=/usr/bin:$PATH; file -b --mime '/tmp/6e4243ea03d8992fd6457f204aa7c73020160620-8139-19pwsu3.png'
+Command :: PATH=/usr/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/74d37a1fb561b3ea8eedc7921e91eed020160620-8139-q9uk86.png[0]' 2>/dev/null
+Command :: PATH=/usr/bin:$PATH; identify -format %m '/tmp/74d37a1fb561b3ea8eedc7921e91eed020160620-8139-q9uk86.png[0]'
+Command :: PATH=/usr/bin:$PATH; convert '/tmp/74d37a1fb561b3ea8eedc7921e91eed020160620-8139-q9uk86.png[0]' -auto-orient -resize "x64" -crop "64x64+10+0" +repage '/tmp/e35f3d4be13501b8eeaa2d98c427b08020160620-8139-1y47rr1'
+Command :: PATH=/usr/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/74d37a1fb561b3ea8eedc7921e91eed020160620-8139-q9uk86.png[0]' 2>/dev/null
+Command :: PATH=/usr/bin:$PATH; identify -format %m '/tmp/74d37a1fb561b3ea8eedc7921e91eed020160620-8139-q9uk86.png[0]'
+Command :: PATH=/usr/bin:$PATH; convert '/tmp/74d37a1fb561b3ea8eedc7921e91eed020160620-8139-q9uk86.png[0]' -auto-orient -resize "100x100>" '/tmp/e35f3d4be13501b8eeaa2d98c427b08020160620-8139-zbytxr'
+Command :: PATH=/usr/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/74d37a1fb561b3ea8eedc7921e91eed020160620-8139-q9uk86.png[0]' 2>/dev/null
+Command :: PATH=/usr/bin:$PATH; identify -format %m '/tmp/74d37a1fb561b3ea8eedc7921e91eed020160620-8139-q9uk86.png[0]'
+Command :: PATH=/usr/bin:$PATH; convert '/tmp/74d37a1fb561b3ea8eedc7921e91eed020160620-8139-q9uk86.png[0]' -auto-orient -resize "200x200>" '/tmp/e35f3d4be13501b8eeaa2d98c427b08020160620-8139-1mpr7pd'
+  [1m[35m (2.3ms)[0m  BEGIN
+Command :: PATH=/usr/bin:$PATH; file -b --mime '/tmp/6e4243ea03d8992fd6457f204aa7c73020160620-8139-1fcj5na.png'
+  [1m[36mSQL (56.9ms)[0m  [1mINSERT INTO `items` (`title`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `category_id`, `created_at`, `updated_at`) VALUES ('photo', 'Screenshot_from_2016-04-07_19-47-46.png', 'image/png', 92913, '2016-06-20 23:25:38.227297', 2, '2016-06-20 23:25:40.710383', '2016-06-20 23:25:40.710383')[0m
+  [1m[35m (19.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/items/7
+Completed 302 Found in 2651ms (ActiveRecord: 79.1ms)
+
+
+Started GET "/items/7" for 127.0.0.1 at 2016-06-20 20:25:40 -0300
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mItem Load (2.4ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 7 LIMIT 1[0m
+  Rendered items/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 128ms (Views: 77.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 20:25:43 -0300
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (1.6ms)[0m  SELECT `items`.* FROM `items`
+  [1m[36mCategory Load (26.8ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (1.0ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 2 LIMIT 1[0m
+  Rendered items/index.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 100ms (Views: 68.9ms | ActiveRecord: 29.4ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2016-06-20 20:25:45 -0300
+Processing by ItemsController#new as HTML
+  [1m[35mCategory Load (27.6ms)[0m  SELECT `categories`.* FROM `categories`
+  Rendered items/_form.html.erb (33.7ms)
+  Rendered items/new.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 94ms (Views: 65.0ms | ActiveRecord: 27.6ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 20:25:49 -0300
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (1.3ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  [1m[35mCategory Load (0.7ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (26.6ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 2 LIMIT 1
+  Rendered items/index.html.erb within layouts/application (38.2ms)
+Completed 200 OK in 96ms (Views: 66.4ms | ActiveRecord: 28.6ms)
+
+
+Started GET "/items/6/edit" for 127.0.0.1 at 2016-06-20 20:25:54 -0300
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (1.9ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 6 LIMIT 1[0m
+  [1m[35mCategory Load (0.7ms)[0m  SELECT `categories`.* FROM `categories`
+  Rendered items/_form.html.erb (6.2ms)
+  Rendered items/edit.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 98ms (Views: 92.8ms | ActiveRecord: 2.6ms)
+
+
+Started PATCH "/items/6" for 127.0.0.1 at 2016-06-20 20:26:01 -0300
+Processing by ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mvGmiCa36WrwHRXFXQBgtdvxngQ+li+NNv6rCjIrAP3F8CZAvAt63uur9fjbZhmcaCiMnaF4kFZ/PrOIHtTNaA==", "item"=>{"title"=>"muiraquita", "category_id"=>"3"}, "commit"=>"Update Item", "id"=>"6"}
+  [1m[36mItem Load (27.6ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 6 LIMIT 1[0m
+  [1m[35m (2.1ms)[0m  BEGIN
+  [1m[36mSQL (27.6ms)[0m  [1mUPDATE `items` SET `category_id` = 3, `updated_at` = '2016-06-20 23:26:01.881825' WHERE `items`.`id` = 6[0m
+  [1m[35m (10.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/items/6
+Completed 302 Found in 78ms (ActiveRecord: 67.3ms)
+
+
+Started GET "/items/6" for 127.0.0.1 at 2016-06-20 20:26:01 -0300
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (13.1ms)[0m  [1mSELECT  `items`.* FROM `items` WHERE `items`.`id` = 6 LIMIT 1[0m
+  Rendered items/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 85ms (Views: 69.8ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 20:26:07 -0300
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.9ms)[0m  SELECT `items`.* FROM `items`
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35mCategory Load (26.4ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 3 LIMIT 1
+  [1m[36mCategory Load (0.8ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 2 LIMIT 1[0m
+  Rendered items/index.html.erb within layouts/application (38.5ms)
+Completed 200 OK in 98ms (Views: 68.2ms | ActiveRecord: 28.8ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 20:30:16 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (33.6ms)[0m  SELECT `items`.* FROM `items`
+  [1m[36mCategory Load (2.3ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35mCategory Load (18.2ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 3 LIMIT 1
+  [1m[36mCategory Load (12.9ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 2 LIMIT 1[0m
+  Rendered items/index.html.erb within layouts/application (281.0ms)
+Completed 200 OK in 1785ms (Views: 1632.3ms | ActiveRecord: 76.8ms)
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 20:30:18 -0300
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-20 20:30:18 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-06-20 20:30:18 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-06-20 20:30:18 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-06-20 20:30:18 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-06-20 20:30:18 -0300
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 20:30:18 -0300
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-06-20 20:30:18 -0300
+
+
+Started GET "/assets/scaffolds.self-6689cd17620784c7119899c6eadbf25ec27b6d2786383bda084bc2cbc5e110ef.css?body=1" for 127.0.0.1 at 2016-06-20 20:30:18 -0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-20 20:30:18 -0300
+
+
+Started GET "/items/new" for 127.0.0.1 at 2016-06-20 20:30:22 -0300
+Processing by ItemsController#new as HTML
+  [1m[35mCategory Load (0.8ms)[0m  SELECT `categories`.* FROM `categories`
+  Rendered items/_form.html.erb (155.6ms)
+  Rendered items/new.html.erb within layouts/application (203.2ms)
+Completed 200 OK in 388ms (Views: 384.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2016-06-20 20:30:50 -0300
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+w8YZbfyfWCfUowKQ3i5UKK+UdLsrMwwayVcn1L18GKkDpitLU7u1ITkbDfFHsB5EWdDS3NCc+si5UQdfgo99w==", "item"=>{"title"=>"Teste ", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f39be00b668 @tempfile=#<Tempfile:/tmp/RackMultipart20160620-8472-14dam6a.png>, @original_filename="Screenshot from 2016-04-08 13-57-12.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"item[image]\"; filename=\"Screenshot from 2016-04-08 13-57-12.png\"\r\nContent-Type: image/png\r\n">, "category_id"=>"2"}, "commit"=>"Create Item"}
+Command :: PATH=/usr/bin:$PATH; file -b --mime '/tmp/988681bd90f4ad8795f7b535eedd0ef220160620-8472-1i2ifyf.png'
+Command :: PATH=/usr/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/aedcef9f4eedc69844592e7b1c2e33a920160620-8472-mj0r4f.png[0]' 2>/dev/null
+Command :: PATH=/usr/bin:$PATH; identify -format %m '/tmp/aedcef9f4eedc69844592e7b1c2e33a920160620-8472-mj0r4f.png[0]'
+Command :: PATH=/usr/bin:$PATH; convert '/tmp/aedcef9f4eedc69844592e7b1c2e33a920160620-8472-mj0r4f.png[0]' -auto-orient -resize "x64" -crop "64x64+10+0" +repage '/tmp/734f3f3ccdca20dc605e27a7e908d35720160620-8472-1wwar58'
+Command :: PATH=/usr/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/aedcef9f4eedc69844592e7b1c2e33a920160620-8472-mj0r4f.png[0]' 2>/dev/null
+Command :: PATH=/usr/bin:$PATH; identify -format %m '/tmp/aedcef9f4eedc69844592e7b1c2e33a920160620-8472-mj0r4f.png[0]'
+Command :: PATH=/usr/bin:$PATH; convert '/tmp/aedcef9f4eedc69844592e7b1c2e33a920160620-8472-mj0r4f.png[0]' -auto-orient -resize "100x100>" '/tmp/734f3f3ccdca20dc605e27a7e908d35720160620-8472-21muye'
+Command :: PATH=/usr/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/aedcef9f4eedc69844592e7b1c2e33a920160620-8472-mj0r4f.png[0]' 2>/dev/null
+Command :: PATH=/usr/bin:$PATH; identify -format %m '/tmp/aedcef9f4eedc69844592e7b1c2e33a920160620-8472-mj0r4f.png[0]'
+Command :: PATH=/usr/bin:$PATH; convert '/tmp/aedcef9f4eedc69844592e7b1c2e33a920160620-8472-mj0r4f.png[0]' -auto-orient -resize "200x200>" '/tmp/734f3f3ccdca20dc605e27a7e908d35720160620-8472-1ubzqlk'
+  [1m[36m (3.0ms)[0m  [1mBEGIN[0m
+Command :: PATH=/usr/bin:$PATH; file -b --mime '/tmp/988681bd90f4ad8795f7b535eedd0ef220160620-8472-ut2mfg.png'
+  [1m[35mSQL (30.3ms)[0m  INSERT INTO `items` (`title`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `category_id`, `created_at`, `updated_at`) VALUES ('Teste ', 'Screenshot_from_2016-04-08_13-57-12.png', 'image/png', 134782, '2016-06-20 23:30:50.420460', 2, '2016-06-20 23:30:52.223137', '2016-06-20 23:30:52.223137')
+  [1m[36m (8.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items/8
+Completed 302 Found in 1930ms (ActiveRecord: 41.9ms)
+
+
+Started GET "/items/8" for 127.0.0.1 at 2016-06-20 20:30:52 -0300
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mItem Load (11.4ms)[0m  SELECT  `items`.* FROM `items` WHERE `items`.`id` = 8 LIMIT 1
+  Rendered items/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 133ms (Views: 113.1ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2016-06-20 20:30:54 -0300
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (30.8ms)[0m  [1mSELECT `items`.* FROM `items`[0m
+  [1m[35mCategory Load (0.7ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 3 LIMIT 1[0m
+  [1m[35mCategory Load (0.6ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  Rendered items/index.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 103ms (Views: 68.9ms | ActiveRecord: 32.7ms)
