@@ -7,6 +7,7 @@ class CreateActiveAdminComments < ActiveRecord::Migration
       t.string :resource_type, null: false
       t.references :author, polymorphic: true
       t.timestamps
+    
     end
     add_index :active_admin_comments, [:namespace]
     add_index :active_admin_comments, [:author_type, :author_id]
@@ -17,3 +18,9 @@ class CreateActiveAdminComments < ActiveRecord::Migration
     drop_table :active_admin_comments
   end
 end
+   def change                   
+     rename_table :active_admin_comments, :active_admin_comments2
+   end
+
+	    
+
